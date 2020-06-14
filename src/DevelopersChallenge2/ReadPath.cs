@@ -7,6 +7,8 @@ namespace DevelopersChallenge2
 {
     class ReadPath
     {
+
+        //save the paths list that the user want to import
         public static List<string> toList()
         {
             List<string> paths = new List<string>();

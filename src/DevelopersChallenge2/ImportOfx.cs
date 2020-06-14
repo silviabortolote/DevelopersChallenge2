@@ -9,8 +9,8 @@ namespace DevelopersChallenge2
 {
     public static class ImportOfx
     {
-
-        public static void toList(List<string> paths)
+        //transfer the dates of all paths for a list
+        public static List<Transaction> toList(List<string> paths)
         {
             List<Transaction> transactions = new List<Transaction>();
             Transaction transaction = new Transaction();
@@ -19,7 +19,9 @@ namespace DevelopersChallenge2
             {
                 if (!System.IO.File.Exists(pathToOfxFile))
                 {
-                    throw new FileNotFoundException();
+                    //throw new FileNotFoundException();
+                    Console.WriteLine("File not found");
+                    continue;
                 }
 
                 var tags = from line in File.ReadAllLines(pathToOfxFile)
@@ -73,12 +75,13 @@ namespace DevelopersChallenge2
                 }
 
             }
-
+            
             Console.WriteLine(transactions.Count);
+            return transactions;
 
         }
 
-        //checks for duplicity
+        //checks for duplicity based on all fields of transaction
         private static bool existTransaction(Transaction transaction, List<Transaction> transactions)
         {
             foreach (Transaction t in transactions)
@@ -91,7 +94,7 @@ namespace DevelopersChallenge2
             return false;
         }
 
-
+        //get the tag of transaction
         private static string getTagName(string line)
         {
             int pos_init = line.IndexOf("<")+1;
@@ -99,7 +102,8 @@ namespace DevelopersChallenge2
             pos_end = pos_end - pos_init;
             return line.Substring(pos_init, pos_end);
         }
-       
+
+        //get the value of transaction
         private static string getTagValue(string line)
         {
             int pos_init = line.IndexOf(">")+1;

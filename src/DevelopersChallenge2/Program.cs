@@ -11,7 +11,9 @@ namespace DevelopersChallenge2
         {
             List<string> paths = ReadPath.toList();
 
-            ImportOfx.toList(paths);
+            List<Transaction> transactions = ImportOfx.toList(paths);
+
+            ExportOfx.exportTransaction(transactions);
 
         }
     }

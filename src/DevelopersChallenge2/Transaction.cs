@@ -1,6 +1,6 @@
 ﻿namespace DevelopersChallenge2
 {
-    class Transaction
+    public  class Transaction
     {
         public string Type { get; set; }
         public string DtPosted { get; set; }
