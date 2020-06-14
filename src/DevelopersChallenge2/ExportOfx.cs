@@ -16,7 +16,7 @@ namespace DevelopersChallenge2
 
             while (!Directory.Exists(path))
             {
-                Console.WriteLine("Path not found");
+                Console.WriteLine("Path não encontrada.");
                 Console.WriteLine("Informe a path do local onde deseja exportar o arquivo final:");
                 path = Console.ReadLine();
             }
@@ -92,7 +92,7 @@ namespace DevelopersChallenge2
                       );
             }
 
-
+            Console.WriteLine("O arquivo extrato.ofx foi gerado com sucesso!");
 
         }
     }

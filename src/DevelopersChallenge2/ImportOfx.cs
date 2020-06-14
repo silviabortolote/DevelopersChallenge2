@@ -20,7 +20,7 @@ namespace DevelopersChallenge2
                 if (!System.IO.File.Exists(pathToOfxFile))
                 {
                     //throw new FileNotFoundException();
-                    Console.WriteLine("File not found");
+                    Console.WriteLine("Arquivo não encontrado.");
                     continue;
                 }
 
@@ -31,7 +31,6 @@ namespace DevelopersChallenge2
                            line.Contains("<TRNAMT>") ||
                            line.Contains("<MEMO>")
                            select line;
-
 
                 foreach (var l in tags)
                 {
