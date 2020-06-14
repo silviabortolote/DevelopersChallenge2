@@ -15,6 +15,8 @@ namespace DevelopersChallenge2
 
             ExportOfx.exportTransaction(transactions);
 
+            Console.WriteLine("O arquivo extrato.ofx foi gerado com sucesso!");
+
         }
     }
 }
