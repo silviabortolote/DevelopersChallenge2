@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace DevelopersChallenge2
 {
@@ -10,8 +11,20 @@ namespace DevelopersChallenge2
         //export the transaction for the archive extrato.ofx
         public static void exportTransaction(List<Transaction> transactions)
         {
-           using (System.IO.StreamWriter file =
-           new System.IO.StreamWriter(@"extrato.ofx"))
+            Console.WriteLine("Informe a path do local onde deseja exportar o arquivo final:");
+            string path = Console.ReadLine();
+
+            while (!Directory.Exists(path))
+            {
+                Console.WriteLine("Path not found");
+                Console.WriteLine("Informe a path do local onde deseja exportar o arquivo final:");
+                path = Console.ReadLine();
+            }
+
+            string pathOfx = path + "/extrato.ofx";
+
+            using (System.IO.StreamWriter file =
+            new System.IO.StreamWriter(@pathOfx))
             {
                 file.WriteLine("OFXHEADER:100" +
                       "\nDATA: OFXSGML" +
