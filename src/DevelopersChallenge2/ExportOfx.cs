@@ -11,7 +11,7 @@ namespace DevelopersChallenge2
         public static void exportTransaction(List<Transaction> transactions)
         {
            using (System.IO.StreamWriter file =
-           new System.IO.StreamWriter(@"C:\Users\silvi\Desktop\Nibo\DevelopersChallenge2\src\DevelopersChallenge2\Properties\extrato.ofx"))
+           new System.IO.StreamWriter(@"extrato.ofx"))
             {
                 file.WriteLine("OFXHEADER:100" +
                       "\nDATA: OFXSGML" +
