@@ -13,14 +13,14 @@ namespace DevelopersChallenge2
         {
             if (transactions.Count > 0)
             {
-                Console.WriteLine("Informe a path do local onde deseja exportar o arquivo final. Ex.: C:/Temp");
-                string path = Console.ReadLine();
+                Console.WriteLine("\nInforme a path do local onde deseja exportar o arquivo final. Ex.: C:/Temp");
+                string path = Console.ReadLine().Trim();
 
                 while (!Directory.Exists(path))
                 {
-                    Console.WriteLine("Path não encontrada.");
-                    Console.WriteLine("Informe a path do local onde deseja exportar o arquivo final. Ex.: C:/Temp");
-                    path = Console.ReadLine();
+                    Console.WriteLine("\nPath não encontrada.");
+                    Console.WriteLine("\nInforme a path do local onde deseja exportar o arquivo final. Ex.: C:/Temp");
+                    path = Console.ReadLine().Trim();
                 }
 
                 string pathOfx = path + "/extrato.ofx";

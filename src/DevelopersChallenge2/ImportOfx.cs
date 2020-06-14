@@ -20,7 +20,7 @@ namespace DevelopersChallenge2
                 if (!System.IO.File.Exists(pathToOfxFile))
                 {
                     //throw new FileNotFoundException();
-                    Console.WriteLine("Arquivo não encontrado.");
+                    Console.WriteLine("\nO arquivo " + pathToOfxFile + " não foi encontrado.");
                     continue;
                 }
 

@@ -15,13 +15,13 @@ namespace DevelopersChallenge2
             string path;
 
             Console.WriteLine("\nInforme a path do arquivo que deseja importar (a path completa do arquivo .ofx Ex.: C:/Temp/extrato1.ofx )");
-            path = Console.ReadLine();
+            path = Console.ReadLine().Trim();
 
             while (path!="0")
             {
                 paths.Add(path);
                 Console.WriteLine("\nInforme a path do arquivo que deseja importar (a path completa do arquivo .ofx Ex.: C:/Temp/extrato1.ofx ), digite '0' caso deseja finalizar:");
-                path = Console.ReadLine();               
+                path = Console.ReadLine().Trim();
             }
 
             return paths;
