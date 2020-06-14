@@ -73,11 +73,8 @@ namespace DevelopersChallenge2
                     }
                 }
 
-            }
-            
-            Console.WriteLine(transactions.Count);
+            }            
             return transactions;
-
         }
 
         //checks for duplicity based on all fields of transaction
