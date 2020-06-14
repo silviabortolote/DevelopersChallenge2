@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace DevelopersChallenge2
 {
-    class LeituraPath
+    class ReadPath
     {
         public static List<string> toList()
         {
