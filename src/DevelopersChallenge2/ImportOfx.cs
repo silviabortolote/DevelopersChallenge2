@@ -9,7 +9,7 @@ namespace DevelopersChallenge2
 {
     public static class ImportOfx
     {
-   
+
         public static void toList(List<string> paths)
         {
             List<Transaction> transactions = new List<Transaction>();
@@ -34,8 +34,7 @@ namespace DevelopersChallenge2
                 foreach (var l in tags)
                 {
                     if (l.IndexOf("<STMTTRN>") != -1)
-                    {
-                        transactions.Add(transaction);
+                    {                       
                         transaction = new Transaction();
                         continue;
 
@@ -62,7 +61,12 @@ namespace DevelopersChallenge2
                                 if (getTagName(l) == "MEMO")
                                 {
                                     transaction.Memo = getTagValue(l);
-                                }
+                                    if (!existTransaction(transaction, transactions))
+                                    {
+                                        transactions.Add(transaction);
+                                    }
+
+                                }                                
                             }
                         }
                     }
@@ -70,8 +74,24 @@ namespace DevelopersChallenge2
 
             }
 
+            Console.WriteLine(transactions.Count);
+
         }
-      
+
+        //checks for duplicity
+        private static bool existTransaction(Transaction transaction, List<Transaction> transactions)
+        {
+            foreach (Transaction t in transactions)
+            {
+               if(transaction.Type==t.Type && transaction.DtPosted == t.DtPosted && transaction.Trnamt == t.Trnamt && transaction.Memo == t.Memo)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
         private static string getTagName(string line)
         {
             int pos_init = line.IndexOf("<")+1;
