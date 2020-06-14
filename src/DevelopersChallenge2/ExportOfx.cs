@@ -13,13 +13,13 @@ namespace DevelopersChallenge2
         {
             if (transactions.Count > 0)
             {
-                Console.WriteLine("Informe a path do local onde deseja exportar o arquivo final:");
+                Console.WriteLine("Informe a path do local onde deseja exportar o arquivo final. Ex.: C:/Temp");
                 string path = Console.ReadLine();
 
                 while (!Directory.Exists(path))
                 {
                     Console.WriteLine("Path não encontrada.");
-                    Console.WriteLine("Informe a path do local onde deseja exportar o arquivo final:");
+                    Console.WriteLine("Informe a path do local onde deseja exportar o arquivo final. Ex.: C:/Temp");
                     path = Console.ReadLine();
                 }
 
@@ -94,12 +94,12 @@ namespace DevelopersChallenge2
                           );
                 }
 
-                Console.WriteLine("O arquivo extrato.ofx foi gerado com sucesso!");
+                Console.WriteLine("\nO arquivo extrato.ofx foi gerado com sucesso!");
 
             }
             else
             {
-                Console.WriteLine("Não há transações para salvar.");
+                Console.WriteLine("\nNão há transações para salvar.");
             }
         }
     }

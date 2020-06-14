@@ -72,7 +72,6 @@ namespace DevelopersChallenge2
                         }
                     }
                 }
-
             }            
             return transactions;
         }
