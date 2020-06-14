@@ -9,7 +9,7 @@ namespace DevelopersChallenge2
 
         static void Main(string[] args)
         {
-            List<string> paths = LeituraPath.toList();
+            List<string> paths = ReadPath.toList();
 
             ImportOfx.toList(paths);
 
